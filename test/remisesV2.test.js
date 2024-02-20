@@ -44,10 +44,10 @@ describe("Testing the Remise function", function () {
     const r = new Remise();
     r.addRemises({ id: 2, articleId: 2, amount: 20 });
 
-    expect(c.showCart()).to.deep.equal([
+    expect(c.showCart(r.remises)).to.deep.equal([
       { id: 1, name: "toto", price: 15.4, quantity: 6 },
-      { id: 2, name: "tata", price: 25, quantity: 4 },
       { id: 2, name: "tata", price: 5, quantity: 1 },
+      { id: 2, name: "tata", price: 25, quantity: 3 },
     ]);
     done();
   });
